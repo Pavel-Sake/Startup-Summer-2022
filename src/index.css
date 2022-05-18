@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.main_iconUser {
+    width: 65px;
+    /*height: 75px;*/
+}
+
+.main_notResult {
+    width: 210px;
+    margin-top: 42px;
+
+    font-size: 22px;
+    color: #808080;
+    text-align: center;
+}
+
+
+

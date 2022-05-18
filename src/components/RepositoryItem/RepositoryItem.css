@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./../../fonts/Inter-Regular.ttf") format("truetype");
+    font-style: normal;
+}
+
+.repoItem {
+    width: 100%;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+
+
+    border-radius: 6px;
+    background: white;
+    list-style-type: none;
+}
+
+.repoName {
+    font-size: 24px;
+    margin-bottom: 16px;
+    display: block;
+
+    text-decoration: none;
+    color: #0064EB;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.repoExp {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+@media (max-width: 1010px) {
+
+    .repoItem {
+        padding: 20px 28px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .repoName {
+        font-size: 20px;
+    }
+
+    .repoExp {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .repoItem {
+        padding: 10px 8px;
+    }
+
+    .repoName {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .repoExp {
+        font-size: 14px;
+    }
+}
