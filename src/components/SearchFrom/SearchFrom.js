@@ -1,24 +1,32 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
+
+import iconSearch from "../../assets/search-icon.svg";
+import { useNavigate } from "react-router-dom";
 
 import "./SearchFrom.css";
-import iconSearch from "../../assets/search-icon.svg";
-import { useNavigate, useParams } from "react-router-dom";
 
 
-const SearchFrom = ({changeUserValue}) => {
+const SearchFrom = ({initialValue, setInitialValue}) => {
 
     let navigate = useNavigate();
-    const {username} = useParams();
+    const [inputValue, setInputValue] = useState(initialValue);
 
+
+    useEffect(() => {
+        setInputValue(initialValue);
+    }, [initialValue]);
+
+    const handleChangeInputValue = (event) => {
+        setInputValue(event.target.value);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const searchValue = event.target.search.value;
 
+        setInitialValue(searchValue);
 
-        // changeUserValue(searchValue);
-
-        if (event.target.search.value) {
+        if (searchValue) {
             return navigate(`user/${searchValue}`);
         } else {
             return navigate("/");
@@ -37,10 +45,11 @@ const SearchFrom = ({changeUserValue}) => {
             />
             <input
                 className="input"
+                onChange={handleChangeInputValue}
                 type="text"
                 name="search"
                 placeholder="Enter GitHab username"
-                defaultValue={username}
+                value={inputValue}
             />
         </form>
     );

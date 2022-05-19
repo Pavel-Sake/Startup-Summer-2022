@@ -6,5 +6,4 @@ const getResource = async (url) => {
 };
 
 
-
 export { getResource };

@@ -1,23 +1,22 @@
 import React from "react";
-
-import "./PaginationBlock.css";
 import ReactPaginate from "react-paginate";
 
-const PaginationBlock = ({publicRepos, changeCurrentPage, currentPage, repoInPage}) => {
+import "./PaginationBlock.css";
+
+
+const PaginationBlock = ({publicRepos, changeCurrentPage, currentPage, repoInPage, showRepoStart, showRepoFinish}) => {
 
     const pageCount = Math.ceil(publicRepos / repoInPage);
 
     const onPageChange = ({selected}) => {
-
         changeCurrentPage(selected + 1);
-
     };
 
-    return (
 
+    return (
         <div className="paginationBlock">
             <div className="paginationBlock_info">
-                {"30"}-{"23"} of {publicRepos} items
+                {showRepoStart}-{showRepoFinish} of {publicRepos} items
             </div>
             <ReactPaginate
                 pageCount={pageCount}  //check
@@ -27,14 +26,13 @@ const PaginationBlock = ({publicRepos, changeCurrentPage, currentPage, repoInPag
                 previousLabel={"<"}
                 nextLabel={">"}
                 onPageChange={onPageChange}
-
                 initialPage={currentPage - 1}
-
                 containerClassName={"paginationBtn"}
                 activeClassName={"activeBtn"}
             />
         </div>
     );
 };
+
 
 export { PaginationBlock };

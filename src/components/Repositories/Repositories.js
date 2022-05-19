@@ -17,18 +17,30 @@ const perPage = 4;
 
 const Repositories = ({publicRepos, username}) => {
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const pageQuery = searchParams.get("page") || "";
+
+    let currentInitialPage = 1;
+
+    if (pageQuery) {
+        currentInitialPage = pageQuery;
+    }
+
 
     const [repositoryData, setRepositoryData] = useState(
         {
-            repositoryInfo: null,
+            repositoryInfo: [],
             loading: true,
             isRepositoryExist: null
-    });
-    const [currentPage, setCurrentPage] = useState(1);
+        });
+    const [currentPage, setCurrentPage] = useState(currentInitialPage);
+
 
     const changeCurrentPage = (page) => {
         setCurrentPage(page);
     };
+
 
     useEffect(() => {
 
@@ -37,8 +49,9 @@ const Repositories = ({publicRepos, username}) => {
         setRepositoryData((state) => {
             return {
                 ...state,
+                repositoryInfo: [],
                 loading: true,
-            }
+            };
         });
 
         getRepositories(`https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${currentPage}`)
@@ -51,23 +64,29 @@ const Repositories = ({publicRepos, username}) => {
                         isRepositoryExist: res.ok
                     }
                 );
-            });
-    }, [username, currentPage]);
 
+                data.length === 0 ? setSearchParams({page: null}) : setSearchParams({page: currentPage});
+            });
+
+    }, [username, currentPage]);
 
     const {repositoryInfo, loading, isRepositoryExist} = repositoryData;
 
+    const shift = 1;
+    const prevPage = currentPage - 1;
+    const numberOfPrevItems = perPage * prevPage;
+    const showRepoStart = numberOfPrevItems + shift;
+    const showRepoFinish = (showRepoStart + repositoryInfo.length) - shift;
+
     if (!isRepositoryExist) {
-        return  null
+        return null;
     }
 
     if (loading) {
         return (<Loader/>);
     }
 
-
     if (repositoryInfo.length === 0) {
-
         return (<IconWithLabel
             icon={iconRepository}
             alt="icon-repository"
@@ -94,10 +113,12 @@ const Repositories = ({publicRepos, username}) => {
                 changeCurrentPage={changeCurrentPage}
                 currentPage={currentPage}
                 repoInPage={perPage}
+                showRepoStart={showRepoStart}
+                showRepoFinish={showRepoFinish}
             />
-
         </div>
     );
 };
+
 
 export { Repositories };

@@ -1,33 +1,44 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import { SearchFrom } from "../SearchFrom/SearchFrom";
 
-import  './Header.css';
 import LogoIcon from "./../../assets/logo-icon.svg";
-import { Link } from "react-router-dom";
+import  './Header.css';
 
 
-const Header = ({onChangeUsername}) => {
+const Header = () => {
 
-    // стереть value  в input
+    const {username} = useParams();
+    let initial = "";
+
+    if (username) {
+        initial = username;
+    }
+
+    const [initialValue, setInitialValue] = useState(initial);
+
+    const handleChangeInput = (value) => {
+        setInitialValue(value);
+    };
+
     return (
         <header className="header">
-
             <Link to="/">
                 <img
                     className="logoIcon"
                     src={LogoIcon}
                     alt="logo"
+                    onClick={() => {handleChangeInput("")} }
                 />
             </Link>
-
             <SearchFrom
-                changeUserValue={onChangeUsername}
+                initialValue={initialValue}
+                setInitialValue={setInitialValue}
             />
-
         </header>
     );
 };
+
 
 export { Header };

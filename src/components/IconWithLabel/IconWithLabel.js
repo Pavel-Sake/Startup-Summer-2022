@@ -9,13 +9,13 @@ const IconWithLabel = ({icon, alt, value}) => {
     // class content
 
     return (
-        <div className="main_block">
+        <div className="iconWithLabel">
             <img
-                className="main_icon"
+                className="iconWithLabel_icon"
                 src={icon}
                 alt={alt}
             />
-            <div className="main_startResult">
+            <div className="iconWithLabel_startResult">
                 {value}
             </div>
         </div>

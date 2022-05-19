@@ -12,7 +12,6 @@ const RepositoryItem = ({repositoryData}) => {
                 href={repositoryData.html_url}
                 target="_blank"
                 rel="noreferrer"
-
             >
                 {repositoryData.name}
             </a>
@@ -20,5 +19,6 @@ const RepositoryItem = ({repositoryData}) => {
         </li>
     );
 };
+
 
 export { RepositoryItem };

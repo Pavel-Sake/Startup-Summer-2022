@@ -46,3 +46,16 @@
     background: #0064EB;
     color: white;
 }
+
+@media (max-width: 500px) {
+
+    .paginationBlock {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .paginationBlock_info {
+        margin-right: 0px;
+    }
+}

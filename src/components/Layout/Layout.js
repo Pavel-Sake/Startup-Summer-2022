@@ -5,15 +5,17 @@ import Header from "../Header";
 
 import  "./Layout.css";
 
-const Layout = ({onChangeUsername}) => {
+
+const Layout = () => {
 
     return (
         <div className="layout">
-            <Header onChangeUsername={onChangeUsername}/>
+            <Header/>
 
             <Outlet/>
         </div>
     );
 };
+
 
 export { Layout };

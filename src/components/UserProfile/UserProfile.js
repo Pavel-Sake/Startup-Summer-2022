@@ -1,8 +1,7 @@
 import React from "react";
 
 import "./UserProfile.css";
-// import followersIcon from "../../assets/followers-icon.svg";
-// import followingIcon from "../../assets/following-icon.svg";
+
 
 const UserProfile = ({userData, iconsFollow}) => {
 
@@ -30,7 +29,6 @@ const UserProfile = ({userData, iconsFollow}) => {
                     {userData.following} following
                 </div>
             </div>
-
         </div>
     );
 };

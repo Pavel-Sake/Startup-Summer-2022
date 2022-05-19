@@ -1,43 +1,29 @@
-import React, {useState, useCallback} from "react";
-import {BrowserRouter, Routes, Route, useSearchParams} from "react-router-dom";
-
-
-import './App.css';
+import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Layout from "./components/Layout";
 import { HomePage } from "./components/Pages/HomePage/HomePage";
 import UserPage from "./components/Pages/UserPage";
 
-
-export const ValueContext = React.createContext();
+import './App.css';
 
 
 function App() {
 
-    const [value, setValue] = useState("");
-
-    const changeUserValue = (value) => {
-        setValue(value);
-    };
-
-
-//onChange, Username
-    // changeuser value or cantext
     return (
         <BrowserRouter>
-            <ValueContext.Provider value={value}>
                 <Routes>
-                    <Route path="/" element={<Layout onChangeUsername={changeUserValue }/>}>
+                    <Route path="/" element={<Layout/>}>
                         <Route index element={<HomePage/>}/>
                         <Route path="/user/:username" element={<UserPage/>}/>
                         <Route path="*" element={<HomePage/>}/>
                     </Route>
 
                 </Routes>
-            </ValueContext.Provider>
         </BrowserRouter>
 
     );
 }
+
 
 export default App;
