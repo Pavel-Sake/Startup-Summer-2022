@@ -27,7 +27,7 @@ const SearchFrom = ({initialValue, setInitialValue}) => {
         setInitialValue(searchValue);
 
         if (searchValue) {
-            return navigate(`user/${searchValue}`);
+            return navigate(`/${searchValue}`);
         } else {
             return navigate("/");
         }
