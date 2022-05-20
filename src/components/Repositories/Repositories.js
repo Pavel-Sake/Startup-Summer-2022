@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactPaginate from 'react-paginate';
 import { useSearchParams } from "react-router-dom";
 
 import { getResource } from "../../API/resource";

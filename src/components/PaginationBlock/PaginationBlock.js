@@ -19,7 +19,7 @@ const PaginationBlock = ({publicRepos, changeCurrentPage, currentPage, repoInPag
                 {showRepoStart}-{showRepoFinish} of {publicRepos} items
             </div>
             <ReactPaginate
-                pageCount={pageCount}  //check
+                pageCount={pageCount}
                 breakLabel="..."
                 pageRangeDisplayed={2}
                 marginPagesDisplayed={1}
