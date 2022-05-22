@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../../fonts/Inter-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+.userProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.userName {
+  font-size: 26px;
+  margin-bottom: 15px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.nicknameLink {
+  margin-bottom: 25px;
+
+  font-size: 18px;
+  color: #0064EB;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.avatarIcon {
+  width: 280px;
+  height: 280px;
+  margin-bottom: 30px;
+
+  border-radius: 100%;
+}
+
+.followBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.followers {
+  margin-right: 20px;
+}
+
+.followIcon {
+  margin-right: 12px;
+}
+
+@media (max-width: 750px) {
+  .avatarIcon {
+    width: 220px;
+    height: 220px;
+  }
+
+  .userName {
+    font-size: 22px;
+  }
+
+  .followBlock {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .avatarIcon {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 500px) {
+  .userProfile {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .avatarIcon {
+    margin-bottom: 20px;
+  }
+
+  .userName {
+    margin-bottom: 10px
+  }
+
+  .nicknameLink {
+    margin-bottom: 10px;
+  }
+
+  .followBlock {
+    margin-bottom: 25px;
+  }
+}

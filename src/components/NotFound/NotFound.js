@@ -5,14 +5,13 @@ import iconUsers from "../../assets/Union.svg";
 
 
 const NotFound = () => {
-
-    return (
-        <IconWithLabel
-            icon={iconUsers}
-            alt="icon-user"
-            value="User not found"
-        />
-    );
+  return (
+    <IconWithLabel
+      icon={iconUsers}
+      alt="icon-user"
+      label="User not found"
+    />
+  );
 };
 
 export { NotFound };

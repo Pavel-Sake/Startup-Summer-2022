@@ -1,26 +1,25 @@
 .iconWithLabel {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .iconWithLabel_icon {
-    width: 65px;
-    height: 65px;
+  width: 65px;
+  height: 65px;
 }
 
-.iconWithLabel_startResult {
-    width: 210px;
-    margin-top: 50px;
+.iconWithLabel_label {
+  width: 210px;
+  margin-top: 50px;
 
-    font-size: 22px;
-    color: #808080;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    line-height: 140%;
+  font-size: 22px;
+  color: #808080;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  line-height: 140%;
 }
-

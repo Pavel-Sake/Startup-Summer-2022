@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../../fonts/Inter-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+.repoBlock {
+  width: 100%;
+  margin-left: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.repoLabel {
+  font-size: 32px;
+  margin-bottom: 30px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.repoList {
+  width: 100%;
+}
+
+@media (max-width: 1010px) {
+  .repoBlock {
+    margin-left: 60px;
+  }
+
+  .repoLabel {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 750px) {
+  .repoBlock {
+    margin-left: 15px;
+  }
+
+  .repoLabel {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 550px) {
+  .repoLabel {
+    margin-bottom: 15px;
+
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .repoBlock {
+    margin-left: 0;
+  }
+}

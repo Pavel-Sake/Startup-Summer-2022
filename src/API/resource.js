@@ -1,9 +1,9 @@
-const getResource = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
+const fetchResource = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
-    return {data, res};
+  return { data, res };
 };
 
 
-export { getResource };
+export { fetchResource };
